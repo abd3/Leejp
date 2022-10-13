@@ -1,0 +1,15 @@
+{
+    "title": "The Dhammapada (Verses 1-32)",
+    "language": "EN",
+    "sources": {
+        "asset": "assets/dhp",
+        "commentary": "commentary/en/sujato/sutta/kn/dhp",
+        "text": "translation/en/sujato/sutta/kn/dhp"
+    },
+    "structure": [
+        "asset.dhp_cover.jpg",
+        "commentary.dhp_intro",
+        "text.dhp1-20",
+        "text.dhp21-32"
+    ]
+}
