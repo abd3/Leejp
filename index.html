@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <title>Make-a-Book</title>
+</head>
+
+<body class="">
+    <div class="controls">
+        <div id="row-one">
+            <img src="./favicon.png" height="25px">
+            <select id="selection">
+                <option value="dn|sujato">Dīgha Nikāya, Lee Joongpyo</option>
+                <option value="mn|sujato">Majjhima Nikāya, Lee Joongpyo</option>
+                <option value="sn|sujato">Saṁyutta Nikāya, Lee Joongpyo</option>
+                <option value="an|sujato">Aṅguttara Nikāya, Lee Joongpyo</option>
+                <option value="kn/dhp|sujato">Dhammapada, Lee Joongpyo</option>
+                <option value="kn/snp|sujato">Sutta Nipāta, Lee Joongpyo</option>
+                <option value="vinaya|brahmali">Mahāvagga of the Vinaya, Lee Joongpyo</option>
+            </select>
+            <!-- <select id="selection">
+                <option value="dn|davis">Dīgha Nikāya, Lee Joongpyo</option>
+                <option value="mn|davis">Majjhima Nikāya, Lee Joongpyo</option>
+                <option value="sn|davis">Saṁyutta Nikāya, Lee Joongpyo</option>
+                <option value="an|davis">Aṅguttara Nikāya, Lee Joongpyo</option>
+                <option value="kn/dhp|davis">Dhammapada, Lee Joongpyo</option>
+                <option value="kn/snp|davis">Sutta Nipāta, Lee Joongpyo</option>
+                <option value="vinaya|davis">Mahāvagga of the Vinaya, Lee Joongpyo</option>
+            </select> -->
+            <button id="make-the-book">Make It</button>
+            <button id="copy">Copy It</button>
+            <button id="toc">Toggle ToC</button>
+            <!-- <span id="counter"></span> -->
+
+            <div id="progress-outer">
+                <div id="progress-bar">
+                    <div id="progress-label"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="row-two">
+            <label><input type="checkbox" id="step-down">Step down sutta headings</label>
+            <label><input type="checkbox" id="flatten">Flatten subheadings to classes</label>
+            <label><input type="checkbox" id="pali">Include Pāli</label>
+            <label id="local-option"><input type="checkbox" id="local">Build from local</label>
+        </div>
+    </div>
+    <div id="standoff-display-area" class="standoff-display-area"></div>
+    <div id="sutta-html" class="sutta-table"></div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
