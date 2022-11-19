@@ -19,5 +19,8 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#a31515",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.ChromeDebuggingAttachment": true,
+  "liveServer.settings.AdvanceCustomBrowserCmdLine": "--remote-debugging-port=9222",
+  // "liveServer.settings.https": true,
 }

@@ -3,6 +3,22 @@
 
 import buildSuttaHtml from "./buildSuttaHtml.js";
 
+const version = 'unpublished';
+const endpoint = {
+  published: (book, translator, language) => {
+    // Sample Production endpoint:
+    // https://suttacentral.net/api/bilarasuttas/sn24.1/sujato?lang=en
+    return `https://suttacentral.net/api/bilarasuttas/${book}/${translator}?lang=${language}`;
+  },
+  unpublished: (book, translator, language) => {
+    // Sample Bilara endpoint:
+    // https://bilara.suttacentral.net/api/segments/sn24.1_translation-en-davis?tertiary=translation-en-sujato%2Ccomment-en-sujato
+    return `https://bilara.suttacentral.net/api/segments/${book}_translation-${language}-${translator}`;
+    // actual: https://bilara.suttacentral.net/api/segments/dn1_translation-en-sujato
+    // live:   https://bilara.suttacentral.net/api/segments/dn1_translation-en-sujato
+  }
+}[version];
+
 export default function buildSutta(slug, article, translator, bookLength, start) {
   slug = slug.toLowerCase();
 
@@ -25,7 +41,7 @@ export default function buildSutta(slug, article, translator, bookLength, start)
     // fetch the information to build the sutta from API
     const language = "en";
     const book = article.replace(/vagga\d+\//, "");
-    fetch(`https://suttacentral.net/api/bilarasuttas/${book}/${translator}?lang=${language}`)
+    fetch(endpoint(book, translator, language))
       .then(response => response.json())
       .then(data => {
         const { html_text, translation_text, root_text } = data;

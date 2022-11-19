@@ -5,11 +5,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Live Server - Chrome",
+            // For this to work you have to ensure that Live Server is running on Port 5500
+            "name": "Launch LeeJP Live Server - Chrome",
             "request": "launch",
             "type": "chrome",
+            "webRoot": "${workspaceFolder}",
             "url": "http://127.0.0.1:5500/index.html",
-            "webRoot": "${workspaceFolder}"
+            // "url": "file://${workspaceFolder}/index.html",
+            // "runtimeArgs": [
+            //     "--allow-file-access-from-files",
+            //     "--disable-web-security"
+            // ]
         }
     ]
 }
